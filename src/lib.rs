@@ -227,6 +227,7 @@ pub enum ScopeType {
     Function,
     Begin,
     Fork,
+    VhdlArchitecture,
 }
 
 impl FromStr for ScopeType {
@@ -239,6 +240,7 @@ impl FromStr for ScopeType {
             "function" => Ok(Function),
             "begin" => Ok(Begin),
             "fork" => Ok(Fork),
+            "vhdl_architecture" => Ok(VhdlArchitecture),
             _ => Err(InvalidData("invalid scope type"))
         }
     }
@@ -253,6 +255,7 @@ impl Display for ScopeType {
             Function => "function",
             Begin  => "begin",
             Fork  => "fork",
+            VhdlArchitecture  => "vhdl_architecture",
         })
     }
 }
@@ -277,6 +280,7 @@ pub enum VarType {
     WAnd,
     Wire,
     WOr,
+    Logic,
 }
 
 impl FromStr for VarType {
@@ -301,6 +305,7 @@ impl FromStr for VarType {
             "wand" => Ok(WAnd),
             "wire" => Ok(Wire),
             "wor" => Ok(WOr),
+            "logic" => Ok(Logic),
             _ => Err(InvalidData("invalid variable type"))
         }
     }
@@ -327,6 +332,7 @@ impl Display for VarType {
             WAnd => "wand",
             Wire => "wire",
             WOr => "wor",
+            Logic => "logic",
         })
     }
 }
